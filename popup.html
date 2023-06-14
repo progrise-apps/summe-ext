@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="popup.css">
+    <title>Document</title>
+    <script defer src="content.js"></script>
+</head>
+<body>
+    <div id="response" class="popup"></div>
+
+    <script>
+        // When the page loads, retrieve the stored data and display it
+        window.onload = function() {
+            const data = JSON.parse(localStorage.getItem('summaries'));
+
+            // Display the data in the "response" div
+            document.getElementById('response').textContent = JSON.stringify(data);
+        }
+    </script>
+</body>
+</html>
